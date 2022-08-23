@@ -35,7 +35,7 @@ macro_rules! value_enum {
             /// section to see which enum variant corresponds to which associated value.
             $vis const fn value(&self) -> $ty {
                 $(
-                    pub const $variant: $ty = $data;
+                    const $variant: $ty = $data;
                 )*
                 match self {
                     $(
