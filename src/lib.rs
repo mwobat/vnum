@@ -1,3 +1,6 @@
+#[cfg(test)]
+mod tests;
+
 #[macro_export]
 macro_rules! value_enum {
     (
