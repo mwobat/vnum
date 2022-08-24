@@ -11,13 +11,13 @@ macro_rules! value_enum {
         }
     ) => (
         $(#[$outer_attr])*
-        /// <hr style="border-top:0px;border-color:#D2991D;">
+        /// <hr style="border-top:0px;border-style:dashed;">
         ///
         /// `Note:` This enum was automatically created with the `value_enum` crate.
         $vis enum $name {
             $(
                 $(#[$variant_attr])*
-                /// <hr style="border-top:0px;border-color:#D2991D;">
+                /// <hr style="border-top:0px;border-style:dashed;">
                 ///
                 /// # Value
                 /// ```ignore
