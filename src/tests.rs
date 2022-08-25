@@ -3,25 +3,36 @@ use crate::value_enum;
 #[test]
 fn correct_values() {
     {
-        make_test_enum!(1);
+        value_enum!{
+            enum Fruit: &'static str {
+                Apple = "red",
+                Banana = "yellow",
+                Blueberry = "blue"
+            }
+        }
         let apple: Fruit = Fruit::Apple;
-        let banana: Fruit = Fruit::Banana;
-        let blueberry: Fruit = Fruit::Blueberry;
         assert_eq!(apple.value(), "red");
+
+        let banana: Fruit = Fruit::Banana;
         assert_eq!(banana.value(), "yellow");
+
+        let blueberry: Fruit = Fruit::Blueberry;
         assert_eq!(blueberry.value(), "blue");
     }
-    // Check for the test enums with i16 type
+    // Check for each of the test enums with i16 type
+    // They only differ in visibility and docs
     for_each!(
         {
             let apple: Fruit = Fruit::Apple;
-            let banana: Fruit = Fruit::Banana;
-            let blueberry: Fruit = Fruit::Blueberry;
             assert_eq!(apple.value(), -42_i16);
+
+            let banana: Fruit = Fruit::Banana;
             assert_eq!(banana.value(), 7_i16);
+
+            let blueberry: Fruit = Fruit::Blueberry;
             assert_eq!(blueberry.value(), 13_i16);
         };
-        2 3 4 5 6 7 8
+        1 2 3 4 5 6 7
     );
 }
 
@@ -44,21 +55,7 @@ use for_each;
 
 // Generated enums for testing.
 macro_rules! make_test_enum {
-    ( $n:tt $( $rest:tt )+ ) => (
-        make_test_enum!($n);
-        make_test_enum!($( $rest )+);
-    );
     (1) => (
-        // str
-        value_enum!{
-            enum Fruit: &'static str {
-                Apple = "red",
-                Banana = "yellow",
-                Blueberry = "blue"
-            }
-        }
-    );
-    (2) => (
         // i16
         value_enum!{
             enum Fruit: i16 {
@@ -68,7 +65,7 @@ macro_rules! make_test_enum {
             }
         }
     );
-    (3) => (
+    (2) => (
         // pub i16
         value_enum!{
             pub enum Fruit: i16 {
@@ -78,7 +75,7 @@ macro_rules! make_test_enum {
             }
         }
     );
-    (4) => (
+    (3) => (
         // item docs i16
         value_enum!{
             /// Fruity docs
@@ -89,7 +86,7 @@ macro_rules! make_test_enum {
             }
         }
     );
-    (5) => (
+    (4) => (
         // item docs #2 i16
         value_enum!{
             /// Fruity docs
@@ -101,7 +98,7 @@ macro_rules! make_test_enum {
             }
         }
     );
-    (6) => (
+    (5) => (
         // variant docs i16
         value_enum!{
             enum Fruit: i16 {
@@ -112,7 +109,7 @@ macro_rules! make_test_enum {
             }
         }
     );
-    (7) => (
+    (6) => (
         // variant docs #2 i16
         value_enum!{
             enum Fruit: i16 {
@@ -124,7 +121,7 @@ macro_rules! make_test_enum {
             }
         }
     );
-    (8) => (
+    (7) => (
         // multiple variant docs i16
         value_enum!{
             enum Fruit: i16 {
