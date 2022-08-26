@@ -208,9 +208,9 @@ trait is derived.
 - Option to ensure unique values
 - Option to disable automatic documentation generation
 - Make the note about the value type in the generated docs clickable  
-  (currently doesn't work because rustdoc only creates links for type which contain no references)
+  (currently doesn't work because rustdoc only creates links for types which are/contain no references)
 - Maybe:
-  - Get variant by value (needs unique values)
-  - "Wildcard" variant which can hold all values of the type
+  - Get variant by value
+  - Optional "wildcard" variant which can hold all values of the type
   - Make the names of duplicate values aliases like in pythons
     [enum module](https://docs.python.org/3/library/enum.html)
