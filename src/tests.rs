@@ -3,7 +3,7 @@ use crate::value_enum;
 #[test]
 fn correct_values() {
     {
-        value_enum!{
+        value_enum! {
             enum Fruit: &'static str {
                 Apple = "red",
                 Banana = "yellow",
@@ -36,7 +36,6 @@ fn correct_values() {
     );
 }
 
-
 // Utility macros:
 
 // Execute code for every given test enum number
@@ -55,29 +54,29 @@ use for_each;
 
 // Generated enums for testing.
 macro_rules! make_test_enum {
-    (1) => (
+    (1) => {
         // i16
-        value_enum!{
+        value_enum! {
             enum Fruit: i16 {
                 Apple = -42,
                 Banana = 7,
                 Blueberry = 13
             }
         }
-    );
-    (2) => (
+    };
+    (2) => {
         // pub i16
-        value_enum!{
+        value_enum! {
             pub enum Fruit: i16 {
                 Apple = -42,
                 Banana = 7,
                 Blueberry = 13
             }
         }
-    );
-    (3) => (
+    };
+    (3) => {
         // item docs i16
-        value_enum!{
+        value_enum! {
             /// Fruity docs
             enum Fruit: i16 {
                 Apple = -42,
@@ -85,10 +84,10 @@ macro_rules! make_test_enum {
                 Blueberry = 13
             }
         }
-    );
-    (4) => (
+    };
+    (4) => {
         // item docs #2 i16
-        value_enum!{
+        value_enum! {
             /// Fruity docs
             /// second line
             enum Fruit: i16 {
@@ -97,10 +96,10 @@ macro_rules! make_test_enum {
                 Blueberry = 13
             }
         }
-    );
-    (5) => (
+    };
+    (5) => {
         // variant docs i16
-        value_enum!{
+        value_enum! {
             enum Fruit: i16 {
                 /// Docs for the apple
                 Apple = -42,
@@ -108,10 +107,10 @@ macro_rules! make_test_enum {
                 Blueberry = 13
             }
         }
-    );
-    (6) => (
+    };
+    (6) => {
         // variant docs #2 i16
-        value_enum!{
+        value_enum! {
             enum Fruit: i16 {
                 /// Docs for the apple
                 /// second apple line
@@ -120,10 +119,10 @@ macro_rules! make_test_enum {
                 Blueberry = 13
             }
         }
-    );
-    (7) => (
+    };
+    (7) => {
         // multiple variant docs i16
-        value_enum!{
+        value_enum! {
             enum Fruit: i16 {
                 /// Docs for the apple
                 /// second apple line
@@ -133,7 +132,7 @@ macro_rules! make_test_enum {
                 Blueberry = 13
             }
         }
-    );
+    };
 }
 
 use make_test_enum;
