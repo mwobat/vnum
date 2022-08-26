@@ -34,7 +34,7 @@ let value: u8 = yellow.into();
 println!("Yellow: {}", value); // Yellow: 3
 ```
 
-*`Note:`* The type of the values must be specified after the enum name, just like above (`u8` in this case).
+`Note:` The type of the values must be specified after the enum name, just like above (`u8` in this case).
 
 <br>
 
@@ -56,14 +56,14 @@ let value: &str = pear.into();
 println!("Pear: {}", value); // Pear: green
 ```
 
-*`Note:`* If the value type is a reference (`&`) or contains references, the `'static` lifetime must be used,  
+`Note:` If the value type is a reference (`&`) or contains references, the `'static` lifetime must be used,  
 otherwise the Rust compiler would not know where the value is borrowed from.
 
-*`Note:`* Only constant expressions are allowed to the right of the equals sign,  
+`Note:` Only constant expressions are allowed to the right of the equals sign,  
 which means they must be evaluable at compile time.  
 Look here for all kinds of constant expressions: <https://doc.rust-lang.org/reference/const_eval.html#constant-expressions>
 
-*`Note:`* If you want more traits implemented for your enum, you have to do it yourself.  
+`Note:` If you want more traits implemented for your enum, you have to do it yourself.  
 In the example above, the
 [Debug](https://doc.rust-lang.org/stable/std/fmt/trait.Debug.html "docs for std::fmt::Debug")
 trait is derived.
@@ -197,7 +197,7 @@ trait is derived.
   }
   ```
 
-  *`Note:`* Apart from generating a method like this, this libarary generates documentation and a
+  `Note:` Apart from generating a method like this, this libarary generates documentation and a
   [From](https://doc.rust-lang.org/stable/std/convert/trait.From.html "docs for std::convert::From")
   implementation.  
   Look at the beginning of the file for more information.
