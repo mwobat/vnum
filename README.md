@@ -219,6 +219,8 @@ Look here for all kinds of constant expressions: <https://doc.rust-lang.org/refe
 - Option to disable automatic documentation generation
 - Make the note about the value type in the generated docs clickable\
   (currently doesn't work because rustdoc only creates links for types which are/contain no references)
+- [no_std](https://doc.rust-lang.org/stable/reference/names/preludes.html#the-no_std-attribute)
+  support
 - Maybe:
   - Get variant by value
   - Optional "wildcard" variant which can hold all values of the type
