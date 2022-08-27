@@ -18,7 +18,7 @@ macro_rules! value_enum {
         $(#[$outer_attr])*
         /// <hr style="border-top:0px;border-style:dashed;">
         ///
-        /// `Note:` This enum was automatically created with the `value_enum` crate.\
+        /// `Note:` This enum was automatically created with the `vnum` crate.\
         /// The value type is `
         #[doc = ::std::stringify!($ty)]
         ///`.

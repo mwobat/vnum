@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "value_enum"
+name = "vnum"
 version = "0.1.0"

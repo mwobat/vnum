@@ -1,6 +1,6 @@
 // Keep in sync with the README examples
 
-use value_enum::value_enum;
+use vnum::value_enum;
 
 value_enum! {
     /// Your documentation could be here 😀

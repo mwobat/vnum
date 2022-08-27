@@ -1,4 +1,4 @@
-# value_enum
+# vnum
 
 Create enums with a constant value associated to every variant.
 
