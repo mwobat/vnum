@@ -13,60 +13,68 @@ Create enums with a constant value associated to every variant.
   [Image](./assets/generated_docs_example_dark.png)
 
 ## Examples
-<!-- Keep in sync with the examples folder -->
+<!-- 
+Keep in sync with the examples folder.
+
+Don't add `pub` to these examples,
+but do add it to the ones in the examples folder,
+otherwise they wouldn't show up in the docs.
+-->
 
 ```rust
 value_enum! {
-    pub enum Color: u8 {
-        Red = 1,
-        Green = 2,
-        Yellow = 3
-    }
-}
-
-// Get the value with the `.value()` method:
-let red = Color::Red;
-println!("Red: {}", red.value()); // Red: 1
-
-// Get the value with the From / Into traits:
-let yellow = Color::Yellow;
-let value: u8 = yellow.into();
-println!("Yellow: {}", value); // Yellow: 3
-```
-
-`Note:` The type of the values must be specified after the enum name, just like above (`u8` in this case).
-
-<br>
-
-```rust
-value_enum! {
-    #[derive(Debug)]
-    pub enum Fruit: &'static str {
+    enum Fruit: &'static str {
         Apple = "red",
         Banana = "yellow",
         Pear = "green"
     }
 }
 
+// Get the value with the `.value()` method:
 let apple = Fruit::Apple;
-println!("{:?}: {}", apple, apple.value()); // Apple: red
+println!("Apple: {}", apple.value()); // Apple: red
 
+// Get the value with the From / Into traits:
 let pear = Fruit::Pear;
 let value: &str = pear.into();
 println!("Pear: {}", value); // Pear: green
 ```
 
-`Note:` If the value type is a reference (`&`) or contains references, the `'static` lifetime must be used,\
+`Note:` The type of the values must be specified after the enum name, just like above (`&'static str` in this case).
+
+`Note:` If the value type is a reference (`&`) or contains references, the
+[`'static`](https://doc.rust-lang.org/stable/rust-by-example/scope/lifetime/static_lifetime.html)
+lifetime must be used,\
 otherwise the Rust compiler would not know where the value is borrowed from.
 
-`Note:` Only constant expressions are allowed to the right of the equals sign,\
-which means they must be evaluable at compile time.\
-Look here for all kinds of constant expressions: <https://doc.rust-lang.org/reference/const_eval.html#constant-expressions>
+<br>
+
+```rust
+value_enum! {
+    #[derive(Debug)]
+    enum Color: u8 {
+        Red = 1,
+        Green = 2,
+        Yellow = 3
+    }
+}
+
+let red = Color::Red;
+println!("{:?}: {}", red, red.value()); // Red: 1
+
+let yellow = Color::Yellow;
+let value: u8 = yellow.into();
+println!("Yellow: {}", value); // Yellow: 3
+```
 
 `Note:` If you want more traits implemented for your enum, you have to do it yourself.\
 In the example above, the
 [Debug](https://doc.rust-lang.org/stable/std/fmt/trait.Debug.html "docs for std::fmt::Debug")
 trait is derived.
+
+`Note:` Only constant expressions are allowed to the right of the equals sign,\
+which means they must be evaluable at compile time.\
+Look here for all kinds of constant expressions: <https://doc.rust-lang.org/reference/const_eval.html#constant-expressions>
 
 ## Alternatives
 

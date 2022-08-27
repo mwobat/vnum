@@ -3,10 +3,7 @@
 use value_enum::value_enum;
 
 value_enum! {
-    /// Your documentation could be here 😀
-    #[derive(Debug)]
     pub enum Fruit: &'static str {
-        /// Documentation for enum variants is also supported.
         Apple = "red",
         Banana = "yellow",
         Pear = "green"
@@ -14,9 +11,11 @@ value_enum! {
 }
 
 fn main() {
+    // Get the value with the `.value()` method:
     let apple = Fruit::Apple;
-    println!("{:?}: {}", apple, apple.value()); // Apple: red
+    println!("Apple: {}", apple.value()); // Apple: red
 
+    // Get the value with the From / Into traits:
     let pear = Fruit::Pear;
     let value: &str = pear.into();
     println!("Pear: {}", value); // Pear: green
