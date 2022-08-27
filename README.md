@@ -210,6 +210,8 @@ Look here for all kinds of constant expressions: <https://doc.rust-lang.org/refe
   implementation.\
   Look at the beginning of the file for more information.
 
+<br>
+
 ## Planned features
 
 - Allow creating multiple value enums in one macro invocation
@@ -225,3 +227,13 @@ Look here for all kinds of constant expressions: <https://doc.rust-lang.org/refe
   - Optional
     [Debug](https://doc.rust-lang.org/stable/std/fmt/trait.Debug.html "docs for std::fmt::Debug")
     implementation which shows the variant name and value, also like in pythons enum module
+
+<br>
+
+### License
+
+Licensed under either the
+[Apache License, Version 2.0](LICENSE-APACHE)
+or
+[MIT license](LICENSE-MIT)
+of your choice.
