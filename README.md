@@ -56,14 +56,14 @@ let value: &str = pear.into();
 println!("Pear: {}", value); // Pear: green
 ```
 
-`Note:` If the value type is a reference (`&`) or contains references, the `'static` lifetime must be used,  
+`Note:` If the value type is a reference (`&`) or contains references, the `'static` lifetime must be used,\
 otherwise the Rust compiler would not know where the value is borrowed from.
 
-`Note:` Only constant expressions are allowed to the right of the equals sign,  
-which means they must be evaluable at compile time.  
+`Note:` Only constant expressions are allowed to the right of the equals sign,\
+which means they must be evaluable at compile time.\
 Look here for all kinds of constant expressions: <https://doc.rust-lang.org/reference/const_eval.html#constant-expressions>
 
-`Note:` If you want more traits implemented for your enum, you have to do it yourself.  
+`Note:` If you want more traits implemented for your enum, you have to do it yourself.\
 In the example above, the
 [Debug](https://doc.rust-lang.org/stable/std/fmt/trait.Debug.html "docs for std::fmt::Debug")
 trait is derived.
@@ -124,8 +124,8 @@ trait is derived.
 
   - Enum
     [disciminators](https://doc.rust-lang.org/reference/items/enumerations.html#custom-discriminant-values-for-fieldless-enumerations)
-    can only be of type `isize`,  
-    so you wouldn't be able to recreate the `&str` example from above.  
+    can only be of type `isize`,\
+    so you wouldn't be able to recreate the `&str` example from above.\
     You can cast variants to any integer type via `as`.
 
   Example of using an enum with disciminators:
@@ -145,7 +145,7 @@ trait is derived.
 
   display_color(Color::Yellow);
   ```
-  
+
   You could additionally:
   - Create a method to get the value:
 
@@ -164,7 +164,7 @@ trait is derived.
 
 - ### **Manually convert from enum variant to value**
 
-  This is exactly what this library does automatically.  
+  This is exactly what this library does automatically.\
 
   Example of manually converting from enum variant to value:
 
@@ -199,7 +199,7 @@ trait is derived.
 
   `Note:` Apart from generating a method like this, this libarary generates documentation and a
   [From](https://doc.rust-lang.org/stable/std/convert/trait.From.html "docs for std::convert::From")
-  implementation.  
+  implementation.\
   Look at the beginning of the file for more information.
 
 ## Planned features
@@ -207,7 +207,7 @@ trait is derived.
 - Allow creating multiple value enums in one macro invocation
 - Option to ensure unique values
 - Option to disable automatic documentation generation
-- Make the note about the value type in the generated docs clickable  
+- Make the note about the value type in the generated docs clickable\
   (currently doesn't work because rustdoc only creates links for types which are/contain no references)
 - Maybe:
   - Get variant by value
