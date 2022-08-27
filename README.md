@@ -2,15 +2,15 @@
 
 Create enums with a constant value associated to every variant.
 
-Get the values via the `.value()` method or via the
-[From](https://doc.rust-lang.org/stable/std/convert/trait.From.html "docs for std::convert::From")
-/ [Into](https://doc.rust-lang.org/stable/std/convert/trait.Into.html "docs for std::convert::Into")
-Traits.
+## Features
 
-Documentation and attributes (`#[...]`) are automatically added to the generated enum.  
-In addition, documentation is generated showing the associated value for each variant:
-[Image](./assets/generated_docs_example_dark.png)
-<!-- You can see it in action by running `cargo doc --example color --open`.-->
+- Get the values via the `.value()` method or via the
+  [From](https://doc.rust-lang.org/stable/std/convert/trait.From.html "docs for std::convert::From")
+  / [Into](https://doc.rust-lang.org/stable/std/convert/trait.Into.html "docs for std::convert::Into")
+  Traits
+- Your attributes (`#[...]`) and documentation are automatically added to the generated enum
+- Documentation is generated showing the value of each variant:
+  [Image](./assets/generated_docs_example_dark.png)
 
 ## Examples
 <!-- Keep in sync with the examples folder -->
