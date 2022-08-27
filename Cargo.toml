@@ -1,6 +1,11 @@
 [package]
 name = "value_enum"
 version = "0.1.0"
+authors = ["lightningyx"]
+description = "Create enums with a constant value associated to every variant"
+repository = "https://github.com/lightningyx/value_enum"
+license = "MIT OR Apache-2.0"
+keywords = ["utility", "enum", "macro"] # add "no_std" keyword when supported
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
