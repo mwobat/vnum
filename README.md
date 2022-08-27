@@ -124,9 +124,9 @@ trait is derived.
 
   - Enum
     [disciminators](https://doc.rust-lang.org/reference/items/enumerations.html#custom-discriminant-values-for-fieldless-enumerations)
-    can only be of type `isize`,\
+    can only be integers,\
     so you wouldn't be able to recreate the `&str` example from above.\
-    You can cast variants to any integer type via `as`.
+    You can cast variants to an integer type via `as`.
 
   Example of using an enum with disciminators:
 
