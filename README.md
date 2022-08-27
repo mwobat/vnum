@@ -214,3 +214,6 @@ trait is derived.
   - Optional "wildcard" variant which can hold all values of the type
   - Make the names of duplicate values aliases like in pythons
     [enum module](https://docs.python.org/3/library/enum.html)
+  - Optional
+    [Debug](https://doc.rust-lang.org/stable/std/fmt/trait.Debug.html "docs for std::fmt::Debug")
+    implementation which shows the variant name and value, also like in pythons enum module
