@@ -76,7 +76,30 @@ trait is derived.
 which means they must be evaluable at compile time.\
 Look here for all kinds of constant expressions: <https://doc.rust-lang.org/reference/const_eval.html#constant-expressions>
 
+## Planned features
+
+- Allow creating multiple value enums in one macro invocation
+- Option to ensure unique values
+- Option to disable automatic documentation generation
+- Make the note about the value type in the generated docs clickable\
+  (currently doesn't work because rustdoc only creates links for types which are/contain no references)
+- [no_std](https://doc.rust-lang.org/stable/reference/names/preludes.html#the-no_std-attribute)
+  support
+- Maybe:
+  - Get variant by value
+  - Optional "wildcard" variant which can hold all values of the type
+  - Make the names of duplicate values aliases like in pythons
+    [enum module](https://docs.python.org/3/library/enum.html)
+  - Optional
+    [Debug](https://doc.rust-lang.org/stable/std/fmt/trait.Debug.html "docs for std::fmt::Debug")
+    implementation which shows the variant name and value, also like in pythons enum module
+
 ## Alternatives
+
+<details>
+<summary open>
+Click to expand
+</summary>
 
 - ### **Simple [constants](https://doc.rust-lang.org/reference/items/constant-items.html)**
 
@@ -211,26 +234,7 @@ Look here for all kinds of constant expressions: <https://doc.rust-lang.org/refe
   Look at the beginning of the file for more information.
 
 <br>
-
-## Planned features
-
-- Allow creating multiple value enums in one macro invocation
-- Option to ensure unique values
-- Option to disable automatic documentation generation
-- Make the note about the value type in the generated docs clickable\
-  (currently doesn't work because rustdoc only creates links for types which are/contain no references)
-- [no_std](https://doc.rust-lang.org/stable/reference/names/preludes.html#the-no_std-attribute)
-  support
-- Maybe:
-  - Get variant by value
-  - Optional "wildcard" variant which can hold all values of the type
-  - Make the names of duplicate values aliases like in pythons
-    [enum module](https://docs.python.org/3/library/enum.html)
-  - Optional
-    [Debug](https://doc.rust-lang.org/stable/std/fmt/trait.Debug.html "docs for std::fmt::Debug")
-    implementation which shows the variant name and value, also like in pythons enum module
-
-<br>
+</details>
 
 ## License
 
