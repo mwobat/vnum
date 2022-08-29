@@ -13,7 +13,7 @@ Create enums with a constant value associated to every variant.
   [Image](./assets/generated_docs_example_dark.png)
 
 ## Examples
-<!-- 
+<!--
 Keep in sync with the examples folder.
 
 Don't add `pub` to these examples,
@@ -195,7 +195,7 @@ Click to expand
 
 - ### **Manually convert from enum variant to value**
 
-  This is exactly what this library does automatically.\
+  This is exactly what this library does automatically.
 
   Example of manually converting from enum variant to value:
 
