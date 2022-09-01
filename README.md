@@ -10,7 +10,7 @@ Create enums with a constant value associated to every variant.
   Traits
 - Your attributes (`#[...]`) and documentation are automatically added to the generated enum
 - Documentation is generated showing the value of each variant:
-  [Image](./assets/generated_docs_example_dark.png)
+  [Image](./misc/generated_docs_example_dark.png)
 
 ## Examples
 <!--
