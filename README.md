@@ -108,9 +108,8 @@ Click to expand
 
 - ### **Simple [constants](https://doc.rust-lang.org/reference/items/constant-items.html)**
 
-  Easy, but you can't:
-  - limit the possible values
-  - add additional items (e.g. methods, trait impl's, constants)
+  Easy, but you can't limit the possible values because you are using the value type directly.
+  Therefore all values of that type can be used.
 
   Example of using simple constants:
 
@@ -210,11 +209,11 @@ Click to expand
 
   <br>
 
-- ### **Manually convert from enum variant to value**
+- ### **Convert from enum variant to value via method**
 
-  This is exactly what this library does automatically.
+  This is exactly what the macro of this library does automatically.
 
-  Example of manually converting from enum variant to value:
+  Example of converting from an enum variant to a value via method:
 
   ```rust
   # fn takes_u8(_: u8) { }
