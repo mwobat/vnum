@@ -3,6 +3,7 @@
 #[cfg(test)]
 mod tests;
 
+/// See the [crate docs](crate) for examples and more.
 #[macro_export]
 macro_rules! value_enum {
     (
