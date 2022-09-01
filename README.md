@@ -228,10 +228,7 @@ Click to expand
   }
   ```
 
-  `Note:` Apart from generating a method like this, this libarary generates documentation and a
-  [From](https://doc.rust-lang.org/stable/std/convert/trait.From.html "docs for std::convert::From")
-  implementation.\
-  Look at the beginning of the file for more information.
+  `Note:` Besides generating such a method, this library does more, see the [Features](#features) section.
 
 <br>
 </details>
