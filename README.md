@@ -22,6 +22,7 @@ otherwise they wouldn't show up in the docs.
 -->
 
 ```rust
+# use vnum::value_enum;
 value_enum! {
     enum Fruit: &'static str {
         Apple = "red",
@@ -50,6 +51,7 @@ otherwise the Rust compiler would not know where the value is borrowed from.
 <br>
 
 ```rust
+# use vnum::value_enum;
 value_enum! {
     #[derive(Debug)]
     enum Color: u8 {
@@ -95,6 +97,9 @@ Look here for all kinds of constant expressions: <https://doc.rust-lang.org/refe
     implementation which shows the variant name and value, also like in pythons enum module
 
 ## Alternatives
+<!--
+Keep the "You could additionally" sections in sync with the respective example above.
+-->
 
 <details>
 <summary open>
@@ -131,6 +136,8 @@ Click to expand
     ```rust
     type Color = u8;
     // `Color` is now an alias for `u8`
+    # const RED: Color = 1;
+
     fn display_color(color: Color) { }
 
     display_color(RED);
@@ -162,33 +169,43 @@ Click to expand
   Example of using an enum with disciminators:
 
   ```rust
+  # fn takes_u8(_: u8) { }
+  # fn takes_i32(_: i32) { }
+  #[derive(Clone, Copy)]
   enum Color {
       Red = 1,
       Green = 2,
       Yellow = 3
   }
 
-  fn display_color(color: Color) {
-    // Now cast to any integer type via `as`:
-    takes_u8(color as u8);
-    takes_i32(color as i32);
-  }
+  let red = Color::Red;
+  let yellow = Color::Yellow;
 
-  display_color(Color::Yellow);
+  // Now cast to any integer type via `as`:
+  takes_u8(red as u8);
+  takes_i32(yellow as i32);
   ```
 
   You could additionally:
   - Create a method to get the value:
 
     ```rust
+    # fn takes_u8(_: u8) { }
+    # #[derive(Clone, Copy)]
+    # enum Color {
+    #     Red = 1,
+    #     Green = 2,
+    #     Yellow = 3
+    # }
     impl Color {
         fn value(&self) -> u8 {
-            self as u8
+            // Dereference with * to get a `Color` instead of `&Color`:
+            *self as u8
         }
     }
-    // ...
-    takes_u8(color.value())
-    // ...
+
+    let red = Color::Red;
+    takes_u8(red.value())
     ```
 
   <br>
@@ -200,6 +217,8 @@ Click to expand
   Example of manually converting from enum variant to value:
 
   ```rust
+  # fn takes_u8(_: u8) { }
+  #[derive(Clone, Copy)]
   enum Color {
       Red,
       Green,
@@ -214,18 +233,13 @@ Click to expand
           match self {
               Color::Red => RED,
               Color::Green => GREEN,
-              Color::Yelllow => YELLOW
+              Color::Yellow => YELLOW
           }
       }
   }
 
-  display_color(Color::Yellow);
-
-  fn display_color(color: Color) {
-    // Now cast to any integer type via `as`:
-    takes_u8(color as u8);
-    takes_i32(color as i32);
-  }
+  let red = Color::Red;
+  takes_u8(red.value());
   ```
 
   `Note:` Besides generating such a method, this library does more, see the [Features](#features) section.
