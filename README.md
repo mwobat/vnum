@@ -114,17 +114,16 @@ Click to expand
   Example of using simple constants:
 
   ```rust
+  # fn takes_u8(_: u8) { }
   const RED: u8 = 1;
   const GREEN: u8 = 2;
   const YELLOW: u8 = 3;
 
-  fn display_color(color: u8) { }
+  takes_u8(RED);
+  takes_u8(GREEN);
 
-  display_color(RED);
-  display_color(GREEN);
-
-  // But also accepts other `u8` values:
-  display_color(42);
+  // Also accepts other `u8` values:
+  takes_u8(42);
   ```
 
   You could additionally:
@@ -137,7 +136,7 @@ Click to expand
     // `Color` is now an alias for `u8`
     # const RED: Color = 1;
 
-    fn display_color(color: Color) { }
+    fn display_color(color: Color) { /* ... */ }
 
     display_color(RED);
 
