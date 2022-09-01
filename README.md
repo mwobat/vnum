@@ -158,15 +158,15 @@ Click to expand
 
   <br>
 
-- ### **Enum with [disciminators](https://doc.rust-lang.org/reference/items/enumerations.html#custom-discriminant-values-for-fieldless-enumerations)**
+- ### **Enum with custom [discriminants](https://doc.rust-lang.org/reference/items/enumerations.html#custom-discriminant-values-for-fieldless-enumerations)**
 
   - Enum
-    [disciminators](https://doc.rust-lang.org/reference/items/enumerations.html#custom-discriminant-values-for-fieldless-enumerations)
+    [discriminants](https://doc.rust-lang.org/reference/items/enumerations.html#custom-discriminant-values-for-fieldless-enumerations)
     can only be integers,\
     so you wouldn't be able to recreate the `&str` example from above.\
     You can cast variants to an integer type via `as`.
 
-  Example of using an enum with disciminators:
+  Example of using an enum with discriminants:
 
   ```rust
   # fn takes_u8(_: u8) { }
