@@ -87,6 +87,7 @@ Look here for all kinds of constant expressions: <https://doc.rust-lang.org/refe
   (currently doesn't work because rustdoc only creates links for types which are/contain no references)
 - [no_std](https://doc.rust-lang.org/stable/reference/names/preludes.html#the-no_std-attribute)
   support
+  <!-- Add "no_std" keyword to Cargo.toml when supported -->
 - Maybe:
   - Get variant by value
   - Optional "wildcard" variant which can hold all values of the type
