@@ -1,9 +1,9 @@
 [package]
 name = "vnum"
 version = "0.1.0"
-authors = ["lightningyx"]
+authors = ["mwobat"]
 description = "Create enums with a constant value associated to every variant"
-repository = "https://github.com/lightningyx/vnum"
+repository = "https://github.com/mwobat/vnum"
 license = "MIT OR Apache-2.0"
 keywords = ["utility", "enum", "macro"] # add "no_std" keyword when supported
 exclude = ["/misc"]

@@ -3,7 +3,7 @@
 #[cfg(test)]
 mod tests;
 
-/// See the [crate docs](crate) for examples and more.
+/// See the [crate docs](crate) for examples and more
 #[macro_export]
 macro_rules! value_enum {
     (
@@ -21,10 +21,10 @@ macro_rules! value_enum {
         ///
         /// This enum was automatically created with the
         /// [`vnum`](https://docs.rs/vnum)
-        /// crate.\
+        /// crate\
         /// The value type is `
         #[doc = ::std::stringify!($ty)]
-        ///`.
+        ///`
         // TODO: Make this /\ a link to the type. See Planned features in README
         //                 ||
         $vis enum $name {
@@ -41,11 +41,11 @@ macro_rules! value_enum {
         }
         impl $name {
             #[allow(non_upper_case_globals)]
-            /// Get the value associated with the enum variant.
+            /// Get the value associated with the enum variant
             ///
-            /// Go to the
+            /// See
             #[doc = ::std::concat!("[`Variants`](", ::std::stringify!($name), "#variants)")]
-            /// section to see which enum variant corresponds to which associated value.
+            /// for the variants and their values
             $vis const fn value(&self) -> $ty {
                 $(
                     const $variant: $ty = $data;
